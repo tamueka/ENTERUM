@@ -1,0 +1,30 @@
+//DEFINIMOS VARIABLES Y SETTINGS
+
+@import 'utils.scss';
+
+//COLORES
+$primary-color: #3498db;
+$secundary-color: #fefefe;
+$terciary-color:grey;
+$fourty-color:#FF8929;
+$text-search:rgba(0, 0, 0, 0.1);
+
+//FUENTES
+$font-family: 'Roboto',sans-serif;
+$font-family-main: 'Nunito',sans-serif;
+
+//TAMAÑO FUENTES
+$font-size-xxxxl: 42;
+$font-size-xxxl: 36;
+$font-size-xxl: 24;
+$font-size-xl: 20;
+$font-size-l: 16;
+$font-size: 14;
+$font-size-xs: 10;
+$font-size-xxs: 8;
+
+/*BREAKPOINTS
+$breakpoint-tablet-portrait: 600px;
+$breakpoint-tablet-landscape: 900px;
+$breakpoint-desktop: 1200px;
+*/

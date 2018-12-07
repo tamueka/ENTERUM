@@ -1,0 +1,120 @@
+@import '~styles/settings.scss';
+
+
+body {
+    background-color: $secundary-color;
+    font-family: $font-family-main;
+    font-size: $font-size-l;
+    padding-top: 164px;
+    -moz-transition: padding-top 0.5s ease;
+    -o-transition: padding-top 0.5s ease;
+    -webkit-transition: padding-top 0.5s ease;
+    transition: padding-top 0.5s ease;
+}
+
+header {
+    width: 100%;
+    height: 120px;
+    background-color:$primary-color;
+    text-align: center;
+    position: relative;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    text-transform: uppercase;
+
+    h1 {
+        padding-left: -10px;
+        font-size: $font-size-xxxxl;
+        color: $secundary-color;
+        line-height: 230px;
+        font-weight: 100;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    .head{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .letra{
+        padding-right: 1062px;
+        width: 177px;
+        height: 124px;
+    }
+
+    nav {
+        position: absolute;
+        bottom: 0;
+        height: 60px;
+        line-height: 60px;
+        width: 100%;
+        background-color: $text-search;
+
+        a {
+            color: $secundary-color;
+            display: inline-block;
+            padding: 10px 15px;
+            line-height: 1;
+            text-decoration: none;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            text-transform: uppercase;
+        
+            &:hover {
+                -moz-box-shadow: 0 0 0 1px $fourty-color;
+                -webkit-box-shadow: 0 0 0 1px $fourty-color;
+                box-shadow: 0 0 0 1px $fourty-color;
+            }
+        }
+        .fa, .fas {
+            color: $secundary-color;
+            padding-left: 10px;
+        }
+
+        .nav-search {
+            right: 9px;
+            top: 13px;
+            background: $text-search;
+            -webkit-border-radius: 60px;
+            -moz-border-radius: 60px;
+            border-radius: 60px;
+            border: none;
+            padding: 5px;
+            padding-left: 15px;
+            outline: none;
+            transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+        }
+
+        .nav-search:focus {
+            background: $fourty-color;
+            font-weight: 600;
+            transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+        }
+
+        .nav-search::-webkit-input-placeholder {
+            color: $secundary-color;
+        }
+
+        .nav-search::-moz-placeholder {
+            color: $secundary-color;
+        }
+
+        .nav-search:-ms-input-placeholder {
+            color: $secundary-color;
+        }
+
+            .search:-ms-input-placeholder {
+                color: $secundary-color;
+            }
+    }
+
+}

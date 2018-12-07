@@ -1,0 +1,640 @@
+
+DIA 1 CLASE 1
+
+Creamos  la carpeta play y la pasamoa a Vscode
+
+Creamos archivo index.html: play>index.html
+
+
+
+Creamos servidor local para hacer pruebas, pdemos utilizar liveserver de Vs Code tb:
+
+Consola: sudo su + contraseña
+
+npm install http-server -g
+
+ASYNC cargamos javasccript de forma asincrona:
+<script type="text/javascript" asyn>console.log('Hola keepcoding')</script>
+<script type="text/javascript" asyn>console.log('Hola keepcoding2')</script>
+
+DEFER cargamos javasccript de forma diferenciada:
+<script type="text/javascript" defer>console.log('Hola keepcoding')</script>
+<script type="text/javascript" defer>console.log('Hola keepcoding2')</script>
+
+Utilizamos la etiqueta src y cargamos javascript en otro directorio
+index.html
+<script type="text/javascript" src="./src/index.js"asyn></script>
+
+src>index.js
+console.log('Hola desde Js externo')
+
+LEEMOS APUNTES WEBPACK.PDF 1-19
+
+Instalacion WEBPACK:
+
+npm init -y     //no hace las preguntas tipicas
+
+Instalamos webpack + webpack cli para hacer cosas desde la consola 
+(cli= comand line interface)
+
+npm i --save-dev webpack webpack-cli
+
+Abrimos webpack desde la consola:
+
+./node_modules/.bin/webpack
+
+Vemos cambios en la consola:
+
+Hash: 5534e706939954dfa48d
+Version: webpack 4.17.2
+Time: 1022ms
+Built at: 09/08/2018 7:01:34 PM
+  Asset       Size  Chunks             Chunk Names
+main.js  966 bytes       0  [emitted]  main
+Entrypoint main = main.js
+[0] ./src/index.js 36 bytes {0} [built]
+
+Nos genera una carpeta dist y dentro un archivo main.js, webpack procesa todos los archivos de la carpeta src y los mete en la carpeta dist
+
+Creamos archivo .gitignore:
+
+node_modules
+dist
+
+Nos vamos a package.json y generamos un nuevo script, para lamar a nuestro ejecutable de webpack (desde package.json podemos ejecutar los modulos de node_moules):
+
+  "scripts": {
+    "webpack": "webpack",
+    },
+
+Ejecutamos ahora de una manera mas sencilla:
+
+npmk run webpack
+
+Configuramos modo observer en introducimos este script en package.json:
+
+“dev": “webpack --watch“,
+
+Ahora podemos ejecutar:
+
+npm run dev
+
+SEGUIMOS CON LAS DIAPOSITIVAS 25-30
+
+
+Creamos archivo configuracion webpack.config.js:
+
+var path = require('path');  //utilizamos var ya que no estamos trabajando ahora con ES6
+
+module.exports = {
+    entry: path.join(__dirname, 'src', 'index'),
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
+}
+
+Entendiendo la configuración
+1) Webpack coge el entry point
+2) Lee el contenido y, cada import realizado, procesa el contenido...
+3) Lo añade al archivo output de salida.
+
+Para amplicar la configuracion de webpack tenemos la documentacion de su web:
+https://github.com/webpack/webpack
+
+
+Instalamos modulo dev server en webpack, servidor propio:
+
+npm install -D webpack-dev-server      
+
+Lo configuramos dentro de script en package.json:
+
+    "build": "webpack --watch",     //produccion
+    "start": "webpack-dev-server"     //desarrollo
+
+Añadimos configuracion webpack.config.js:
+
+devServer:{
+    open: true,
+    overlay: true,
+    port: 3000
+}
+
+Ejecutamos con: npm start
+
+No funciona por este warning:
+WARNING in configuration
+The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/concepts/mode/
+
+Tenemos que diferencia en webpack el modo desarrollo o configuracion en package.json:
+
+"start": "webpack-dev-server --mode=development"
+
+Utilizamos el plugin HtmlWebapckPlugin, nos permite coger el index.html de src e incluirlo en distribucion (dist): https://webpack.js.org/plugins/html-webpack-plugin/
+
+Instalamos plugin:
+
+npm install --save-dev html-webpack-plugin
+
+Configuramos webpack.config.js:
+
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+    plugins: [
+        new HtmlWebpackPlugin(          //los plugin hay que inicializar con new como si fueran una clase
+            {
+                title: 'Play',
+                template: path.join(__dirname, 'src', 'index.html'),
+            minify:{
+                collapseWhitespace: true
+            }
+            }              
+        )
+    ]
+}   
+
+Estos plugins tiene muchas opciones por ejemplo minify, para minificar archivos:
+            minify:{
+                collapseWhitespace: true
+            }
+
+
+Metemos index.html dentro de la carpeta src
+
+Ejecutamos: npm run build
+
+Nos genera un archivo index.html dentro de la carpeta dist que esta minificado
+
+Nos vamos a src>index.html y borramos:
+
+<script type="text/javascript" src="./dist/main.js"asyn></script>
+
+Usando ES6 con Babel, para poder utilizar ES6 en todos los browser tenemos que transpilarlo mediante babel: https://babeljs.io/. Necesitamos utilizar babel-loader y babel
+
+Nos permite establecer unos preset para ver que navegadores queremos configurar
+
+Instalamos babel:
+npm install --save-dev @babel/loader @babel/core @babel/preset-env
+
+Creamos archivo en la raiz .babelrc:
+
+{
+    "preset":[
+        "env"
+    ]
+}
+
+Para ver mas opciones de preset en babel: http://2ality.com/2017/02/babel-preset-env.html
+
+Configuramos webpack.config.js:
+
+    module:{
+        rules: [
+            {
+                test:/\.(js)$/,
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            }
+        ]
+    }
+
+
+Empaquetando CSS:
+
+Para automatizar el empaquetado de CSS, debemos utilizar dos
+loaders:
+
+css-loader: para soportar la carga de CSS en el entry point
+style-loader: para cargar automáticamente el CSS en el HTML
+
+npm install --save-dev style-loader css-loader
+
+Nos vamos a webconfig.config.js:
+
+    module:{
+        rules: [
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ]
+            }
+        ]
+    }
+
+
+
+Nos vamos a src>index.html:
+
+<body>
+    <header>
+        Play
+    </header>
+</body>
+
+Enlazamos el css: <link rel="stylesheet" href="./src/index.css">
+
+Creamos dentro de src>index.css
+
+header{
+    background-color: teal;
+}
+
+Vemos cambios en el browser
+npm start
+
+
+
+Creamos un archivo 
+
+DIA 1 CLASE 2
+
+Configuramos correctamente babel
+
+index.js: Ponemos sintaxis en ES6 para probar babel
+
+const array = [1,2,3];
+console.log(...array)
+
+Instalamos babel:
+npm install @babel/core @babel/preset-env babel-loader --save-dev
+
+Configuramos webpack.config.js:
+
+    module:{
+        rules: [
+            {
+                test: /\.(js)$/,
+                exclude: /node_modules/,
+                use: "babel-loader"       
+            },
+
+Modificarmos archivo .babelrc:
+
+{
+  "presets": [
+    [
+      "@babel/preset-env"
+    ]
+  ]
+}
+
+Ejecutamos npm run build y sale el bundle compilado:
+
+{var r;(r=console).log.apply(r,[1,2,3])}]);
+
+Generamos un sistemas de componentes en javascript, como en React
+
+<body>
+    <div id="root">
+    <!--DENTRO GENERAMOS TODO NUESTRO CODIGO-->
+    </div>
+</body>
+
+En index.js: 
+
+import './index.css'
+
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.createElement('header');
+    document.body.appendChild(header);
+    header.innerHTML = 'Play';
+  });
+
+  Ejecutamos nuestro codigo y vemos cambios
+
+Creamos archivo src>header.js
+
+export const makeHeader = () => {
+    const header = document.createElement('header');
+    header.innerHTML = 'Play';
+    return header;
+}
+
+export default{
+ makeHeader
+}
+
+En index ahora cambiamos:
+
+import './index.css'
+import { makeHeader } from './header.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.appendChild(makeHeader());
+  });
+  
+
+Instalamos ESLint:
+
+npm i -g eslint                                 //de forma general (global)
+npm i eslint-plugin-import@latest --save-dev   //en nuestro proyecto de foma local
+npm i eslint-config-airbnb-base
+
+
+eslint --init -i //incluimos esto en los script de package.json "eslint": "eslint --init -i"
+
+Nos hace unas preguntas para configurarlo:
+How would you like to configure ESLint? (Use arrow keys):
+Use a popular style guide
+❯ Answer questions about your style
+  Inspect your JavaScript file(s)
+
+Otra opcion es crear nuestro archivo .eslintrc.js, lo creamos en la raiz del proyecto y definimos las reglas:
+Copiamos archivo de alejandro basado en la configuracion airbnb:
+
+module.exports = {
+  "extends": "airbnb-base",
+  "plugins": [
+    "import"
+  ],
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "import/no-unresolved": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "document": false
+  }
+};
+
+Por ultimo instalamos el plugin eslint para vscode: Extensiones Eslint
+
+Podemos deshabilitar eslint de algunos archivos con este comentario: 
+/*eslint-disable */
+
+INSTALAMOS SASS
+npm install --save-dev sass-loader node-sass
+
+Configuramos un nuevo loader webpack.config.js
+
+module: {
+rules: [
+        {
+            test: /\.scss$/,
+            use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+        }
+
+
+Borramos el loader de css, ya que no lo vamos a necesitar:
+        {
+            test: /\.css$/,
+            use: [ 'style-loader', 'css-loader' ]       
+        },
+
+
+Cremamos nuevos directorios para nuestros componentes
+src>components>header
+
+Dentro van header-components.js y header-styles.ss
+
+Actualizamos todas nuestras rutas
+
+Comprobamos que funcionan
+
+Daipositiva 60 Separamos la configuración de dev y production
+
+Modificamos el archivo webpack.config.js:
+
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
+
+
+const commonConfig = {
+  entry: path.join(__dirname, 'src', 'index'),
+  output: {
+    filename: 'bundle[hash].js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  plugins: [
+    new HtmlWebpackPlugin(
+      {
+        title: 'Play',
+        template: path.join(__dirname, 'src', 'index.html'),
+        minify: {
+          collapseWhitespace: true
+        }
+      }
+    )
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
+    ]
+  }
+};
+const devConfig = {
+  devServer: {
+    open: true,
+    overlay: true,
+    port: 3000,
+    hot: true
+  }
+};
+
+const prodConfig = {};
+
+module.exports = (env, argv) => (argv === 'development'
+  ? merge(commonConfig, devConfig)
+  : merge(commonConfig, prodConfig));
+
+
+Instalamos webpack-merge: npm i -D webpack-merge    //-D dependencia de desarrollo
+
+Modificamos los scipts de package.json:
+
+"build": "webpack --mode=production",
+"start": "webpack-dev-server --mode=development --hot",
+
+Podemos ejecutar en modo produccion: npm run build
+Podemos ejecutar en modo desarrollo: npm start
+
+
+EJECUTAR NPM REBUILD SI USAMOS OTRA VERSION DE NODE 
+npm REBUILD
+
+MODIFICAR:
+
+article --> article-styles.scss
+
+    .blue-hover:hover {
+        border: none;
+        border-bottom: 5px solid #2196fe;
+}
+
+header --> header-styles.scss
+
+header {
+    height: 120px;
+}
+
+.letra{
+    padding-right: 1062px;
+    width: 177px;
+    height: 124px;
+}
+
+body{
+padding-top: 164px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

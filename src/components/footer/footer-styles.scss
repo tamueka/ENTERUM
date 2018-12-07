@@ -1,0 +1,131 @@
+@import '~styles/settings.scss';
+
+.generic-anchor {
+    color: $secundary-color;
+
+    &:visited {
+        color: $secundary-color;
+    }
+
+    &:hover {
+        color: $fourty-color;
+    }
+}
+
+.flex-rw {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+footer {
+    background: $primary-color;
+    margin-top: auto;
+    width: 100%;
+}
+
+
+.footer-social-section {
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    margin-top: 5px;
+}
+
+.footer-social-section::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 10px;
+    border-top: 1px solid $terciary-color;
+    width: calc(100% - 20px);
+}
+
+.footer-social-overlap {
+    position: relative;
+    z-index: 2;
+    background: $primary-color;
+    padding: 0 20px;
+}
+
+.footer-social-connect {
+    display: flex;
+    align-items: center;
+    font: 1.7em $font-family;
+    color: $secundary-color;
+}
+
+.footer-social-small {
+    font-size: 0.6em;
+    padding: 0px 20px;
+}
+
+.footer-social-overlap>a {
+    font-size: 3em;
+}
+
+.footer-social-overlap>a:not(:first-child) {
+    margin-left: 0.38em;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .footer-social-connect {
+        font-size: 2.5em;
+    }
+
+    .footer-social-overlap>a {
+        font-size: 2.24em;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+
+    .footer-social-section {
+        justify-content: center;
+    }
+
+    .footer-social-section::after {
+        top: 25%;
+    }
+
+    .footer-social-connect {
+        margin-bottom: 10px;
+        padding: 0 10px;
+    }
+
+    .footer-social-overlap {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-social-icons-wrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    .footer-social-overlap>a:not(:first-child) {
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .footer-social-overlap>a {
+        margin: auto;
+    }
+
+    .footer-social-overlap>a:not(:first-child) {
+        margin-left: 0;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .footer-social-connect {
+        font-size: 2.4em;
+    }
+
+    .footer-social-overlap>a {
+        font-size: 2.24em;
+    }
+
+}
