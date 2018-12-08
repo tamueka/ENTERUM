@@ -1,21 +1,29 @@
-#App ENTERUM
+# App ENTERUM #
 Aplicación web que muestra una lista de canciones, las cuales podemos ver al detalle, marcar como favoritas y dejar un comentario sobre ellas.
 
 Web application that shows a list of songs, which we can see in detail, mark as favorites and leave a comment on them.
 
-##Prerequisites
+
+
+---
+## Prerequisites ##
 
 Node v10.11.0 and npm 6.4.1 installed 
 
-##Deploy
+---
+### Deploy ###
 
 cd ENTERUM
 
-##Install
+\PRACTICA_FRONTEND_AVANZADO\ENTERUM\
+
+---
+### Install ###
 
 npm install
 
-##Run server
+---
+### Run server ###
 
 npm run server
 
@@ -24,24 +32,29 @@ Open server on port 8000
 Loading ./src/data/articles.json
 Done
 
-Resources
+Resources:
 http://localhost:8000/articles
 
-Home
+Home:
 http://localhost:8000
 
-##Test
+--- 
+### Test ###
 
 npm run test
 
 Error: no test specified
 
-##Build
+--- 
+
+### Build ###
 
 npm run build
 
-##Start
+---
+
+### Start ###
 
 npm start
 
-Project is running at http://localhost:8080/
+Project is running at: http://localhost:8080/
