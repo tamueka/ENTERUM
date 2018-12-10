@@ -3,8 +3,6 @@ Aplicación web que muestra una lista de canciones, las cuales podemos ver al de
 
 Web application that shows a list of songs, which we can see in detail, mark as favorites and leave a comment on them.
 
-![ENTERUM](https://www.dropbox.com/s/lvvlvm3xmrzg2v7/home.png?dl=0)
-
 ---
 ## Prerequisites ##
 
