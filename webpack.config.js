@@ -1,30 +1,50 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const merge = require('webpack-merge');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var merge = require('webpack-merge');
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var CleanWebpackPlugin = require('clean-webpack-plugin');
+var CriticalPlugin = require('webpack-plugin-critical').CriticalPlugin;
+var webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 
 
+var page = function ({title, template, chunks, filename}) {
+  return new HtmlWebpackPlugin(
+    {
+      title: title,
+      template: template,
+      chunks: chunks,
+      minify: {
+        collapseWhitespace: true
+      },
+      filename: filename
+    }
+  )
+}
 
-const commonConfig = {
-  entry:['babel-polyfill', path.join(__dirname, 'src', 'index')],
+var commonConfig = {
+  entry:{
+    articles: ['babel-polyfill', path.join(__dirname, 'src', 'pages', 'articles', 'index')],
+    article: ['babel-polyfill', path.join(__dirname, 'src', 'pages', 'article', 'index')]
+  },
   output: {
     filename: '[name][hash].js',
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
-    new Dotenv(),
-    new HtmlWebpackPlugin(
-      {
-        title: 'ENTERUM',
-        template: path.join(__dirname, 'src', 'index.html'),
-        minify: {
-          collapseWhitespace: true
-        },
-        filename: path.resolve(__dirname, 'dist', 'index.html')
-      }
-    ),
+    new Dotenv(), 
+    page({
+      title: 'ENTERUM',
+      template: path.join(__dirname, 'src', 'pages', 'articles', 'index.html'),
+      chunks: ['articles'],
+      filename: path.resolve(__dirname, 'dist', 'index.html')
+      }),
+    page({
+      title: 'ARTICLES',
+      template: path.join(__dirname, 'src', 'pages', 'article', 'index.html'),
+      chunks: ['article'],
+      filename: path.resolve(__dirname, 'dist', 'article', 'index.html')
+    })
   ],
   module: {
     rules: [
@@ -63,7 +83,7 @@ const commonConfig = {
         },
   devtool:'sourcemap'
 };
-const devConfig = {
+var devConfig = {
   module: {
     rules: [
       {
@@ -82,13 +102,18 @@ const devConfig = {
   }
 };
 
-
-const prodConfig = {
+var prodConfig = {
   plugins: [
       new MiniCssExtractPlugin({
         filename: '[name].[hash].css'
       }),
       new CleanWebpackPlugin(['dist']),
+      new CriticalPlugin({
+        src: path.join(__dirname, 'src', 'pages', 'articles', 'index.html'),
+        inline: true,
+        minify: true,
+        dest: path.join(__dirname, 'dist', 'index.html')
+      })
     ],
     module: {
       rules: [
