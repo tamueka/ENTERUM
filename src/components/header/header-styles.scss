@@ -45,6 +45,10 @@ header {
     &:hover {
         box-shadow: 0 0 0 1px $fourty-color;
     }
+    
+    &.menu-active{
+        color: $fourty-color;
+    }
         
     display: none;
             
@@ -87,7 +91,7 @@ header {
             &.hamburger-icon{
                 position: absolute; 
                 top: 21px;
-                right: 115px;
+                right: 100px;
                 display: block;
             }
         }

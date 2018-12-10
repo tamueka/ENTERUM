@@ -12,7 +12,6 @@ hamburgerLink.addEventListener('click', () => {
   header.classList.toggle('menu-open');
 });
 
-
 export default {
   updateHeader
 };
