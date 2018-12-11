@@ -10,6 +10,10 @@ class ArticleService {
     async getArticles() {
         return this.APIServiceInstance.get(this.model);
     }
+
+    async getArticle(id) {
+        return this.APIServiceInstance.get(`${this.model}/${id}`);
+    }
 }
 
 export default ArticleService;
