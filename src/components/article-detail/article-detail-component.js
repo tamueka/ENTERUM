@@ -34,6 +34,8 @@ export const updateArticleDetail = ({
             <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">${commentsNumber}</p>
         </div>
         <p class="article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link"></p>
+        <a title="back" class=" back article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link" href="javascript:history.back()">
+        <i class="fas fa-long-arrow-alt-left"></i>  BACK</a>
     </div>
   `;
     return article;

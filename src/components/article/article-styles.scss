@@ -115,7 +115,7 @@
     .styled-link:hover,
     .styled-link:focus,
     .styled-link:active {
-        color: #536dfe;
+        color: $fourty-color;
     }
 
     .shadow-1 {
@@ -129,7 +129,7 @@
 
     .blue-hover:hover {
         border: none;
-        border-bottom: 5px solid #2196fe;
+        border-bottom: 5px solid $fourty-color;
     }
 
     .clearfix::before,
