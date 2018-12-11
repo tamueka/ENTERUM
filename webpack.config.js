@@ -107,13 +107,7 @@ var prodConfig = {
       new MiniCssExtractPlugin({
         filename: '[name].[hash].css'
       }),
-      new CleanWebpackPlugin(['dist']),
-      new CriticalPlugin({
-        src: path.join(__dirname, 'src', 'pages', 'articles', 'index.html'),
-        inline: true,
-        minify: true,
-        dest: path.join(__dirname, 'dist', 'index.html')
-      })
+      new CleanWebpackPlugin(['dist'])
     ],
     module: {
       rules: [
