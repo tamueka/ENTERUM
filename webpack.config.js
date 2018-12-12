@@ -27,7 +27,8 @@ var page = function ({title, template, chunks, filename}) {
 var commonConfig = {
   entry:{
     articles: ['babel-polyfill', path.join(__dirname, 'src', 'pages', 'articles', 'index')],
-    article: ['babel-polyfill', path.join(__dirname, 'src', 'pages', 'article', 'index')]
+    article: ['babel-polyfill', path.join(__dirname, 'src', 'pages', 'article', 'index')],
+    contact: ['babel-polyfill', path.join(__dirname, 'src', 'pages', 'contact', 'index')]
   },
   output: {
     filename: '[name][hash].js',
@@ -36,16 +37,22 @@ var commonConfig = {
   plugins: [
     new Dotenv(), 
     page({
-      title: 'ENTERUM',
+      title: 'Enterum',
       template: path.join(__dirname, 'src', 'pages', 'articles', 'index.html'),
       chunks: ['articles'],
       filename: path.resolve(__dirname, 'dist', 'index.html')
       }),
     page({
-      title: 'ARTICLES',
+      title: 'Articles',
       template: path.join(__dirname, 'src', 'pages', 'article', 'index.html'),
       chunks: ['article'],
       filename: path.resolve(__dirname, 'dist', 'article', 'index.html')
+    }),
+    page({
+      title: 'Contact',
+      template: path.join(__dirname, 'src', 'pages', 'contact', 'index.html'),
+      chunks: ['article'],
+      filename: path.resolve(__dirname, 'dist', 'contact', 'index.html')
     })
   ],
   module: {
