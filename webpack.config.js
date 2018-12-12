@@ -4,8 +4,10 @@ var merge = require('webpack-merge');
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CriticalPlugin = require('webpack-plugin-critical').CriticalPlugin;
-var webpack = require('webpack');
-const Dotenv = require('dotenv-webpack');
+var Dotenv = require('dotenv-webpack');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+var TerserPlugin = require('terser-webpack-plugin')
 
 
 var page = function ({title, template, chunks, filename}) {
@@ -103,6 +105,20 @@ var devConfig = {
 };
 
 var prodConfig = {
+  optimization:{
+    minimizer:[
+      new OptimizeCssAssetsPlugin(
+        {
+          cssProcessorOptions: { map: { inline: false, annotation: true } }
+        }
+      ),
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+      }),
+    ]
+  },
   plugins: [
       new MiniCssExtractPlugin({
         filename: '[name].[hash].css'
