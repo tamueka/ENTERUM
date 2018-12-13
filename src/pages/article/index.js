@@ -12,4 +12,5 @@ if (articleId){
         updateArticleDetail(articleJSON);
     });
 }
-updateHeader({ title: 'Articles', active: 'article-detail' });
+
+updateHeader({ title: 'articles' , active: 'articles'});
