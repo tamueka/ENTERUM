@@ -51,7 +51,7 @@ var commonConfig = {
     page({
       title: 'Contact',
       template: path.join(__dirname, 'src', 'pages', 'contact', 'index.html'),
-      chunks: ['article'],
+      chunks: ['contact'],
       filename: path.resolve(__dirname, 'dist', 'contact', 'index.html')
     })
   ],

@@ -7,7 +7,7 @@ import ArticleService from 'services/article-service'
 export const createArticles = () => {
     const articles = document.getElementById('articles');
     const articleServiceInstance = new ArticleService();
-    articles.innerHTML = 'Loading <i class="fas fa-spinner fa-spin"></i>';
+    articles.innerHTML = 'Loading <div class="lds-hourglass"></div>';
 
   articleServiceInstance.getArticles().then((articlesJson) => {
       articles.innerHTML = '';

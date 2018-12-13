@@ -4,7 +4,5 @@ import { updateContactForm } from 'components/contact-form/contact-form-componen
 
 import 'styles/main.scss';
 
-console.log('NO ME RECONOCE JAVASCRIPT P0R CONSOLA')
-
 updateHeader({ title: 'contact', active: 'contact' });
 updateContactForm();
