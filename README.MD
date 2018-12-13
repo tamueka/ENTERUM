@@ -69,7 +69,7 @@ Error: no test specified
 
 ---
 
-## Generation of distribution for production ##
+### Generation of distribution for production ###
 
 To generate the distribution code we will execute the following command inside the directory:
 
