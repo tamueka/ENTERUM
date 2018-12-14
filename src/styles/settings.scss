@@ -33,3 +33,13 @@ $font-size-xxs: 8px;
 $breakpoint-tablet-portrait: 850px;
 $breakpoint-tablet-landscape: 1000px;
 $breakpoint-desktop: 1200px;
+
+//KEYFRAMES
+@keyframes heartBeat {
+    from {
+        transform: scale(1);
+    }
+    to {
+            transform: scale(1.1)
+    }
+}

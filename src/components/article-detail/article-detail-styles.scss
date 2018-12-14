@@ -21,5 +21,12 @@
     color: $error;
     border: none;
     outline-width: 0;
+
+    .fas{
+        animation-name: heartBeat;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
 }
 
