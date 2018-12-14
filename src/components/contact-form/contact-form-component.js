@@ -1,10 +1,15 @@
 import MessageService from 'services/message-service';
 
 const addErrorValidationInputs = (formInputs) => {
-
     for (let i = 0; i < formInputs.length; i += 1) {
         const input = formInputs[i];
+
+        input.addEventListener('focus', () => {
+            input.classList.add('focus');
+        });
+
         input.addEventListener('blur', () => {
+            input.classList.remove('focus');
         if (!input.checkValidity()) {
             input.classList.add('error');
         } else {

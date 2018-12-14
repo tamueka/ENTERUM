@@ -1,3 +1,14 @@
+const isLiked = id => localStorage.getItem(`article-${id}`);
+
+const toggleLike = (id) => {
+    const likeValue = isLiked(id) === 'true' ? 'false': 'true';
+    localStorage.setItem(`article-${id}`, likeValue)
+}
+
+const setInitialValue = (likeButton, liked) =>{
+    if(liked === 'true') likeButton.children[0].classList.add('fas')
+}
+
 export const updateArticleDetail = ({
     title,
     imageUrl,
@@ -35,10 +46,22 @@ export const updateArticleDetail = ({
         </div>
         <p class="article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link"></p>
         <a title="back" class=" back article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link" href="javascript:history.back()">
-        <i class="fas fa-long-arrow-alt-left"></i>  BACK</a>
+        <div>
+            <i class="fas fa-long-arrow-alt-left"></i>  BACK</a>
+        </div>
+        <div>
+            <button id="like-button" class="like-button" alt="like">
+                <i class="far fa-heart"></i>
+            </button>
+        </div>
     </div>
   `;
-    return article;
+    const likeButton = document.getElementById('like-button');
+    setInitialValue(likeButton, isLiked(id));
+    likeButton.addEventListener('click', () => {
+    likeButton.children[0].classList.toggle('fas');
+    toggleLike(id);
+  });
 };
 
 export default { updateArticleDetail };

@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production",
     "deploy": "webpack --mode=production && cp CNAME dist/CNAME surge dist",
-    "start": "webpack-dev-server --mode=development --hot --inline",
+    "start": "webpack-dev-server --mode=development --hot --inline --host 0.0.0.0",
     "eslint": "eslint",
     "server": "json-server --watch --port=8000 ./src/data/db.json"
   },
