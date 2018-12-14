@@ -49,12 +49,20 @@
         }
     }
 
-    #contact-form-submit{
-        display: block;
-        width: 100%;
-        background-color: $primary-color;
-        color: $secundary-color;
-        padding: 10px;
+        #contact-form-submit{
+            display: block;
+            width: 100%;
+            background-color: $primary-color;
+            color: $secundary-color;
+            padding: 10px;
+        }
 
-    }
+        #notice{
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            color: red;
+            padding: 10px;
+        }
+
 }

@@ -18,6 +18,22 @@ class APIService {
             return { error };
         }
     }
+    async post(body, uri){
+        try {
+            const response = await fetch(`${this.baseUrl}${uri}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+            });
+            if (!response.ok) {
+                throw Error(response.statusText);
+                }
+            return true;
+            } catch (error) {
+                console.warn('Error', error);
+                return {error}
+            }
+    }
 }
 
 export default APIService;

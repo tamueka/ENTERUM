@@ -8,7 +8,7 @@
     "build": "webpack --mode=production",
     "start": "webpack-dev-server --mode=development --hot --inline",
     "eslint": "eslint",
-    "server": "json-server --watch --port=8000 ./src/data/articles.json"
+    "server": "json-server --watch --port=8000 ./src/data/db.json"
   },
   "keywords": [],
   "author": "Samuel Ruiz de la Rosa",

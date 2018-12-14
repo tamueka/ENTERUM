@@ -1,0 +1,24 @@
+{
+  "messages": [
+    {
+      "name": "Samuel",
+      "last_name": "Ruiz",
+      "email": "admin@example.com",
+      "message": "lorem ipsum dolor",
+      "id": 1
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "HTML",
+      "imageUrl": "https://cdn-images-1.medium.com/max/1600/1*jCNANupl0ECRzF6cOLuWNw.gif",
+      "text": "How to make your HTML responsive by adding a single line of CSS",
+      "author": "Per Harald Borgen",
+      "nameArticle": "How to make your HTML responsive by adding a single line of CSS",
+      "imageProfile": "https://miro.medium.com/fit/c/240/240/0*EdUYcQhX6TPWdQ6p.jpg",
+      "publicationTime": "Articulo publicado hace 5 minutos",
+      "commentsNumber": "Comments: 5"
+    }
+  ]
+}

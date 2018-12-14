@@ -40,13 +40,17 @@ npm run server
 
 Open server on port 8000
 
-Loading ./src/data/articles.json
+Loading ./src/data/db.json
 Done
 
 Resources:
 
 ```bash
 http://localhost:8000/articles
+```
+
+```bash
+http://localhost:8000/messages
 ```
 
 Home:
