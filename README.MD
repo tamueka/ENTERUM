@@ -14,8 +14,11 @@ Node v10.11.0 and npm 6.4.1 installed
 
 Download the master branch from the repository
 
+```bash
 cd ENTERUM
+```
 
+Root of project:
 \PRACTICA_FRONTEND_AVANZADO\ENTERUM\
 
 ---
@@ -45,19 +48,13 @@ Done
 
 Resources:
 
-```bash
 http://localhost:8000/articles
-```
 
-```bash
 http://localhost:8000/messages
-```
 
 Home:
 
-```bash
 http://localhost:8000
-```
 
 This will create a server with the models defined in the file /src/data/db.json
 
@@ -91,6 +88,4 @@ Once installed the dependencies we can run the webpack server locally:
 npm run start
 ```
 
-```bash
 Project is running at: http://localhost:8080/
-```
