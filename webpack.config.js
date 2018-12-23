@@ -88,6 +88,7 @@ var commonConfig = {
             utils: path.resolve(__dirname, 'src', 'utils'),
             data: path.resolve(__dirname, 'src', 'data'),
             services: path.resolve(__dirname, 'src', 'services'),
+            pages: path.resolve(__dirname, 'src', 'pages'),
           }
         },
   devtool:'sourcemap'

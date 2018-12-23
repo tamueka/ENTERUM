@@ -14,6 +14,7 @@ class ArticleService {
     async getArticle(id) {
         return this.APIServiceInstance.get(`${this.model}/${id}`);
     }
+
 }
 
 export default ArticleService;

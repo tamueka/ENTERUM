@@ -6,8 +6,16 @@ export const appendComponent = (parent, components) => {
 
 export const sleep = (time) => new Promise(response => setTimeout(response, time));
 
-
+export const getFormData = (formInputs) => {
+    const formData = {};
+    for (let i = 0; i < formInputs.length; i += 1) {
+        const input = formInputs[i];
+        formData[input.name] = input.value;
+    }
+    return formData;
+}
    
 export default {
-    appendComponent
+    appendComponent,
+    getFormData
 };

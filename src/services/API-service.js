@@ -1,4 +1,3 @@
-import { sleep } from "../utils/utils";
 
 class APIService {
     constructor() {

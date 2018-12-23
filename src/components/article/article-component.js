@@ -9,8 +9,8 @@ export const createArticle = ({
             publicationTime,
             commentsNumber,
             id
-        } =
-{   title: 'No title', imageUrl: 'No image', text: 'No text', author: 'No author', nameArticle:'No name', 
+        } = 
+        {   title: 'No title', imageUrl: 'No image', text: 'No text', author: 'No author', nameArticle:'No name', 
     imageProfile:'No image', publicationTime:'No publication', commentsNumber:'No comments',
 }) => {
     const article = document.createElement('div');
@@ -35,6 +35,4 @@ export const createArticle = ({
     return article;
 };
 
-export default {
-    createArticle
-};
+export default { createArticle };

@@ -1,7 +1,8 @@
 
 import { appendComponent } from 'utils/utils';
 import { createArticle } from 'components/article/article-component';
-import ArticleService from 'services/article-service'
+import ArticleService from 'services/article-service';
+
 
 
 export const createArticles = () => {
@@ -18,7 +19,8 @@ export const createArticles = () => {
     }).catch((error)=>{
         articles.innerHTML = 'There was an error, please reload';
     });
-  return articles;
+
+    return articles;
   };
 
 

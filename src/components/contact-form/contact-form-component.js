@@ -1,4 +1,7 @@
 import MessageService from 'services/message-service';
+import { getFormData, appendComponent } from 'utils/utils';
+
+ /*VALIDACION*/
 
 const addErrorValidationInputs = (formInputs) => {
     for (let i = 0; i < formInputs.length; i += 1) {
@@ -19,14 +22,6 @@ const addErrorValidationInputs = (formInputs) => {
     }
 }
 
-const getFormData = (formInputs) =>{
-    const formData = {};
-    for (let i = 0; i < formInputs.length; i += 1) {
-        const input = formInputs[i];
-        formData[input.name] = input.value;
-    }
-    return formData;
-}
 
 export const updateContactForm = () => {
     const contactForm = document.getElementById('contact-form');
@@ -54,4 +49,32 @@ export const updateContactForm = () => {
     });
 };
 
-export default updateContactForm;
+/*CREAMOS FORM */
+
+export const createArticleForm = ({
+    name,
+    last_name,
+    email,
+    message
+} = 
+{
+    name: 'No name',
+    last_name: 'No last_name',
+    email: 'No email',
+    message:'No message'
+}) =>{
+    const articleForm = document.createElement('div');
+    articleForm.classList.add('article-form');
+    articleForm.innerHTML = `
+    <p>${name}</p>
+    <p>${last_name}</p>
+    <p>${email}</p>
+    <p>${message}</p>
+    `
+
+}
+
+export default {
+    createArticleForm,
+    updateContactForm
+}
