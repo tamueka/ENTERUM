@@ -1,7 +1,5 @@
 import MessageService from 'services/message-service';
-import { getFormData, appendComponent } from 'utils/utils';
-
- /*VALIDACION*/
+import { getFormData } from 'utils/utils';
 
 const addErrorValidationInputs = (formInputs) => {
     for (let i = 0; i < formInputs.length; i += 1) {
@@ -41,6 +39,7 @@ export const updateContactForm = () => {
             (response) => {
             if(response === true) {
                 notice.innerHTML = 'Your message has been sent';
+                
             }
         }
         );
@@ -49,32 +48,6 @@ export const updateContactForm = () => {
     });
 };
 
-/*CREAMOS FORM */
-
-export const createArticleForm = ({
-    name,
-    last_name,
-    email,
-    message
-} = 
-{
-    name: 'No name',
-    last_name: 'No last_name',
-    email: 'No email',
-    message:'No message'
-}) =>{
-    const articleForm = document.createElement('div');
-    articleForm.classList.add('article-form');
-    articleForm.innerHTML = `
-    <p>${name}</p>
-    <p>${last_name}</p>
-    <p>${email}</p>
-    <p>${message}</p>
-    `
-
-}
-
 export default {
-    createArticleForm,
     updateContactForm
 }

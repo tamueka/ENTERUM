@@ -1,5 +1,5 @@
-import { getFormData, appendComponent } from 'utils/utils';
-import {createArticleForm, updateContactForm } from 'components/contact-form/contact-form-component';
+import { getFormData, appendComponent, reportValidity } from 'utils/utils';
+import { createMessage } from 'components/message/message-component';
 import MessageService from 'services/message-service';
 
 const isLiked = id => localStorage.getItem(`article-${id}`);
@@ -12,24 +12,6 @@ const toggleLike = (id) => {
 const setInitialValue = (likeButton, liked) =>{
     if(liked === 'true') likeButton.children[0].classList.add('fas')
 }
-
-export const createArticlesForms = () => {
-    const message = document.getElementById('article-form');
-    const messageServiceInstance = new MessageService();
-
-    messageServiceInstance.getMessage(getFormData(formInputs)).then((messagesJson) => {
-        message.innerHTML = '';
-        if (messageJson.lenght === 0) {
-            message.innerHTML = 'No comments'
-        } else {
-            appendComponent(message, messagesJson.map(messageData => createArticleForm(messageData)));
-        }
-    }).catch((error) => {
-        articles.innerHTML = 'There was an error, please reload';
-    });
-
-    return message;
-};
 
 
 export const updateArticleDetail = ({
@@ -87,7 +69,92 @@ export const updateArticleDetail = ({
   });
 };
 
+export const updateMesageDetail = (data) => {
+    const messages = document.getElementById('message-detail');
+    const messageArticles = messages;
+    if (data.length === 0) {
+    } else {
+        appendComponent(messageArticles,
+            data.map(messageData => createMessage(messageData)));
+    }
+};
+
+const addCustomValidation = (input) => {
+    if (input.value === input.value.toUpperCase()) {
+        input.setCustomValidity('No introduzcas todo el texto en mayúsculas');
+    } else {
+        input.setCustomValidity('');
+    }
+};
+
+const addErrorClass = (input) => {
+    if (!input.checkValidity()) {
+        input.classList.add('error');
+    } else {
+        input.classList.remove('error');
+    }
+};
+
+export const handleValidation = (formInputs) => {
+    for (let i = 0; i < formInputs.length; i += 1) {
+        const input = formInputs[i];
+        input.addEventListener('focus', () => {
+            input.classList.add('focus');
+        });
+        input.addEventListener('blur', () => {
+            input.classList.remove('focus');
+            addCustomValidation(input);
+            addErrorClass(input);
+        });
+    }
+};
+
+export const updateMessageForm = (articleId) => {
+    const messageForm = document.getElementById('message-form');
+    const submitFormButton = document.getElementById('btn-message');
+    const formInputs = messageForm.getElementsByClassName('message-input');
+    const MessageServiceInstance = new MessageService();
+    const id_article = document.getElementById('id_article');
+    id_article.value = articleId
+    handleValidation(formInputs);
+    submitFormButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        submitFormButton.disable = true;
+        reportValidity(messageForm);
+        if (messageForm.checkValidity()) {
+            MessageServiceInstance.postMessage(getFormData(formInputs)).then(
+                (response) => {
+                    if (response === true) {
+                        console.log('ok')
+                        location.reload();
+                    }
+                }
+            );
+            submitFormButton.disable = false;
+        }
+    });
+};
+
+export const updateForm = () => {
+    const submitFormButton = document.getElementById('btn-search');
+    const articlesServiceInstance = new ArticleService();
+    submitFormButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        var value = document.getElementById('search').value
+        console.log(value);
+        articlesServiceInstance.searchArticle(value).then((articlesJson) => {
+            articles.innerHTML = '';
+            loadarticles(articlesJson, articles);
+        }).catch(() => {
+            articles.innerHTML = 'There was an error, please reload';
+        });
+    });
+};
+
 export default {
     updateArticleDetail,
-    createArticlesForms
+    updateMesageDetail,
+    updateMessageForm,
+    updateForm,
+    handleValidation
 };

@@ -1,0 +1,25 @@
+@import '~styles/settings.scss';
+@import '~styles/layout.scss';
+
+.message {
+    .card {
+        border: none;
+        border-radius: 10px;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    padding-top: 20px;
+    justify-content: space-around;
+    float: none;
+}
+
+a {
+    color: $primary-color !important;
+    font-weight: bold;
+}
+
+.card-message {
+    padding-bottom: 10px;
+}

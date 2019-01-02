@@ -32,7 +32,11 @@ export const createArticle = ({
         <a href ="/article/?id=${id}" class="article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">Read More</a>
     </div>
   `;
+
+  
     return article;
 };
 
 export default { createArticle };
+
+
