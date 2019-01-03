@@ -33,6 +33,16 @@ npm install
 
 ---
 
+### Rename .env-sample
+
+Modify archive .env-sample to .env
+
+View PORT in the package.json > scripts > server
+
+Put PORT in the archive .env
+
+---
+
 ### Run server ###
 
 Json-server has been used as a substitute for a backend:
