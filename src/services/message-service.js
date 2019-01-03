@@ -16,14 +16,6 @@ class MessageService {
     async postMessage(message) {
         return this.APIServiceInstance.post(message, this.model);
     }
-
-    async getMessage_global() {
-        return this.APIServiceInstance.get(`${this.model_g}`);
-    }
-    
-    async postMessage_global(message) {
-        return this.APIServiceInstance.post(message, this.model_g);
-    }
 }
 
 export default MessageService;

@@ -1,14 +1,4 @@
 {
-  "messages_global": [
-    {
-      "name": "Samuel",
-      "last_name": "Ruiz",
-      "email": "tamueka@hotmail.com",
-      "message": "dfasdfsd",
-      "id_article": 1,
-      "id": 1
-    }
-  ],
   "messages": [
     {
       "name": "Samuel",
@@ -156,6 +146,13 @@
       "name": "Samuel",
       "message": "buen post",
       "id": 21
+    },
+    {
+      "email": "tamueka@gmail.com",
+      "id_article": "10",
+      "name": "samuel",
+      "message": "good post",
+      "id": 22
     }
   ],
   "articles": [

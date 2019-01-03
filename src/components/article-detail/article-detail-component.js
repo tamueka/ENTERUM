@@ -45,8 +45,6 @@ export const updateArticleDetail = ({
             <img src="${imageProfile}" alt="Url image" class="d-block" style="height:80px; width=50px; border-radius:50%; padding-bottom: 10px;">
             <p class="mb-1">${author}</p>
             <p class="mb-1">${text}</p>
-            <p class="mb-0 small font-weight-medium text-uppercase mb-1 lts-2px">${publicationTime}</p>
-            <p class="mb-0 small font-weight-medium text-uppercase mb-1 lts-2px">${commentsNumber}</p>
         </div>
         <p class="article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link"></p>
         <a title="back" class=" back article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link" href="javascript:history.back()">

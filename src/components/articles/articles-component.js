@@ -23,10 +23,7 @@ export const createArticles = () => {
     return articles;
   };
 
-
-  
-
-    export const updateMesageDetail_global = (data) => {
+export const updateMesageDetail_global = (data) => {
     const messages = document.getElementById('message-detail');
     const messageArticles = messages;
     if (data.length === 0) {
@@ -36,7 +33,7 @@ export const createArticles = () => {
     }
 };
 
-    export const updateMessageForm_global = () => {
+export const updateMessageForm_global = () => {
     const messageForm = document.getElementById('message-form');
     const submitFormButton = document.getElementById('btn-message');
     const formInputs = messageForm.getElementsByClassName('message-input');
@@ -59,7 +56,6 @@ export const createArticles = () => {
         }
     });
 };
-
 
 export default {
     createArticles,
