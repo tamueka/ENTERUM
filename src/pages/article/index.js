@@ -2,6 +2,7 @@ import { updateArticleDetail, updateMesageDetail, updateMessageForm } from '../.
 import queryString from 'query-string';
 import ArticleService from '../../services/article-service';
 import MessageService from '../../services/message-service';
+import { updateHeader } from 'components/header/header-component';
 
 import 'styles/main.scss';
 
@@ -18,6 +19,6 @@ if (articleId) {
         updateMesageDetail(messageJSON);
     });
 }
-
+updateHeader({ title: 'articles', active: 'articles' });
 updateMessageForm(articleId);
 

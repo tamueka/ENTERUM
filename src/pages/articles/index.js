@@ -4,6 +4,6 @@ import { createArticles } from 'components/articles/articles-component';
 
 import 'styles/main.scss';
 
-updateHeader({title: 'ENTERUM', active: 'articles'});
+updateHeader({ title: 'enterum', active: 'articles'});
 createArticles();
 

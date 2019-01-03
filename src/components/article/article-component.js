@@ -30,6 +30,7 @@ export const createArticle = ({
             <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">${commentsNumber}</p>
         </div>
         <a href ="/article/?id=${id}" class="article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">Read More</a>
+        <a href = "/article/?id=${id}#message-form" class="article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">Comments</a>
     </div>
   `;
 
