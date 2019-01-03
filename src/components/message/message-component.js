@@ -14,13 +14,10 @@ export const createMessage = ({
     const messages = document.createElement('div');
     messages.classList.add('card-message');
     messages.innerHTML = `
-      <div class="card text-center">
-        <div class="card-body" >
-          <h5 class="card-title">${name}</h5> 
-          <p class="card-text">${message}</p> 
-          <p class="card-text"><small class="text-muted">${email}</small></p>
-        </div> 
-    </div>`;
+        <div>
+          <h3>${name} says:</h3> 
+          <h5>${message}</h5> 
+        </div>`;
     return messages;
 };
 

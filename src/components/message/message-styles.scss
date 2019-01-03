@@ -1,2 +1,78 @@
-@import '~styles/settings.scss';
-@import '~styles/layout.scss';
+@import '~styles/layout';
+@import '~styles/settings';
+
+.container-messages{
+    text-align: center;
+}
+
+#message-form {
+    width: 100%;
+    margin: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include for-tablet-portrait {
+        width: 70%;
+    }
+
+    @include for-tablet-landscape {
+        width: 33.333333%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .contact-form-field {
+        padding: 20px 0;
+        width: 100%;
+
+        label {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            color: $form-letter;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            border: 0;
+            border-bottom: solid 1px $border-color;
+
+            &.error {
+                border-color: $error;
+            }
+
+            &.focus {
+                border-color: $primary-color;
+            }
+        }
+
+        textarea {
+            @extend input;
+            min-height: 4em;
+            border: solid 1px $border-color;
+
+            @include for-tablet-landscape {
+                width: 100%;
+            }
+        }
+    }
+
+    #contact-form-submit,
+    #reset {
+        width: 50%;
+        background-color: $primary-color;
+        color: $secundary-color;
+        padding: 10px;
+    }
+
+    #notice {
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        color: red;
+        padding: 10px;
+    }
+
+}

@@ -1,10 +1,10 @@
 {
   "messages": [
     {
-      "name": "Samuel",
-      "last_name": "Ruiz",
-      "email": "admin@example.com",
-      "message": "lorem ipsum dolor",
+      "email": "tamueka@gmail.com",
+      "id_article": "1",
+      "name": "samuel",
+      "message": "good post",
       "id": 1
     }
   ],
@@ -12,7 +12,7 @@
     {
       "id": "1",
       "title": "HTML",
-      "imageUrl": "https://cdn-images-1.medium.com/max/1600/1*jCNANupl0ECRzF6cOLuWNw.gif",
+      "imageUrl": "https://cdn-images-1.medium.com/max/1000/1*aVzJTznRRfP1lM7AXe9yLw.jpeg",
       "text": "How to make your HTML responsive by adding a single line of CSS",
       "author": "Per Harald Borgen",
       "nameArticle": "How to make your HTML responsive by adding a single line of CSS",

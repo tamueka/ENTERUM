@@ -37,7 +37,7 @@ export const updateArticleDetail = ({
     const article = document.getElementById('article-detail');
     article.innerHTML = `
     <div>
-        <img src="${imageUrl}" alt="imagen" title="imagen">
+        <img src="${imageUrl}" class="iamgen" alt="imagen" title="imagen">
         <p class="mb-1">${author}</p>
         <div>
             <p class="link">${title}</p>
@@ -49,12 +49,10 @@ export const updateArticleDetail = ({
         <p class="article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link"></p>
         <a title="back" class=" back article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link" href="javascript:history.back()">
         <div>
-            <i class="fas fa-long-arrow-alt-left"></i>  BACK</a>
+            <button id="like-button" class="like-button" alt="like"><i class="far fa-heart"></i></button> 
         </div>
         <div>
-        <button id="like-button" class="like-button" alt="like">
-            <i class="far fa-heart"></i>
-        </button>
+            <i class="fas fa-long-arrow-alt-left"></i>  BACK</a>
         </div>
     </div>
   `;

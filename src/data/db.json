@@ -36,46 +36,11 @@
       "id": 5
     },
     {
-      "email": "tamueka@gmail.com",
-      "id_article": "1",
-      "name": "dfgsfg",
-      "message": "l,jkbjbiyiogygiy",
-      "id": 6
-    },
-    {
-      "email": "tamueka@gmail.com",
-      "id_article": "1",
-      "name": "dfgsfg",
-      "message": "sdafasdfd",
-      "id": 7
-    },
-    {
-      "email": "tamueka@gmail.com",
-      "id_article": "1",
-      "name": "dfgsfg",
-      "message": "asdasdssdf",
-      "id": 8
-    },
-    {
-      "email": "tamueka@gmail.com",
-      "id_article": "1",
-      "name": "dfgsfg",
-      "message": "kñahsdfhauidsf",
-      "id": 9
-    },
-    {
       "name": "samsam",
       "last_name": "samsam",
       "email": "tamueka@gmail.com",
       "message": "asasasmsaamsmasmasmasmasmams",
       "id": 10
-    },
-    {
-      "email": "tamueka@gmail.com",
-      "id_article": "1",
-      "name": "DSAdS",
-      "message": "ADSAadaDA",
-      "id": 11
     },
     {
       "email": "dfsg@lkjsdfg.com",
@@ -114,20 +79,6 @@
     },
     {
       "email": "tamueka@gmail.com",
-      "id_article": "1",
-      "name": "rty",
-      "message": "asdfdsfdfds",
-      "id": 17
-    },
-    {
-      "email": "tamueka@gmail.com",
-      "id_article": "1",
-      "name": "samsam",
-      "message": "samsamsamsam",
-      "id": 18
-    },
-    {
-      "email": "tamueka@gmail.com",
       "id_article": "8",
       "name": "dfgsfg",
       "message": "rertwert",
@@ -141,25 +92,39 @@
       "id": 20
     },
     {
-      "email": "tamueka@hotmail.com",
-      "id_article": "1",
-      "name": "Samuel",
-      "message": "buen post",
-      "id": 21
-    },
-    {
       "email": "tamueka@gmail.com",
       "id_article": "10",
       "name": "samuel",
       "message": "good post",
       "id": 22
+    },
+    {
+      "email": "tamueka@hotmail.com",
+      "id_article": "1",
+      "name": "Samuel",
+      "message": "buen post¡",
+      "id": 23
+    },
+    {
+      "email": "tamueka@gmail.com",
+      "id_article": "1",
+      "name": "Lolo",
+      "message": "good job¡¡¡",
+      "id": 24
+    },
+    {
+      "email": "admin2@galacticblum.com",
+      "id_article": "1",
+      "name": "Ismael",
+      "message": "Vaya currada de post",
+      "id": 25
     }
   ],
   "articles": [
     {
       "id": "1",
       "title": "HTML",
-      "imageUrl": "https://cdn-images-1.medium.com/max/1600/1*jCNANupl0ECRzF6cOLuWNw.gif",
+      "imageUrl": "https://cdn-images-1.medium.com/max/1000/1*aVzJTznRRfP1lM7AXe9yLw.jpeg",
       "text": "How to make your HTML responsive by adding a single line of CSS, In this article",
       "author": "Per Harald Borgen",
       "nameArticle": "How to make your HTML responsive by adding a single line of CSS",
