@@ -1,14 +1,27 @@
 @import '~styles/settings';
 @import '~styles/utils';
 
+
 .article-detail {
-    width: 100%;
+    width: 70%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    /* for single line flex container */
+    align-content: center;
     padding: 0 10px;
+
 }
 
 .imagen{
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+.d-block{
+        justify-content: center;
+        align-items: center;
 }
 
 .back{
@@ -17,24 +30,25 @@
     }
 }
 
-.like-button{
-    font-size: $font-size-xxl;
-    background-color: transparent;
-    color: $error;
-    border: none;
-    outline-width: 0;
+    .like-button{
+            font-size: $font-size-xxl;
+            background-color: transparent;
+            color: $error;
+            border: none;
+            outline-width: 0;
 
-    .fas{
-        animation-name: heartBeat;
-        animation-duration: 1s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
+            .fas{
+                animation-name: heartBeat;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+     }
+
+    .mb-1{
+        text-align: center;
     }
-}
 
-.mb-1{
-    text-align: center;
-}
-.link{
-    color: $error;
-}
+    .link{
+        color: $error;
+    }

@@ -118,14 +118,35 @@
       "name": "Ismael",
       "message": "Vaya currada de post",
       "id": 25
+    },
+    {
+      "email": "dfsg@lkjsdfg.com",
+      "id_article": "1",
+      "name": "lucas",
+      "message": "ok",
+      "id": 26
+    },
+    {
+      "email": "dfsg@lkjsdfg.com",
+      "id_article": "1",
+      "name": "samuel",
+      "message": "probando",
+      "id": 27
+    },
+    {
+      "email": "tamueka@gmail.com",
+      "id_article": "1",
+      "name": "alva",
+      "message": "i like this post 100%",
+      "id": 28
     }
   ],
   "articles": [
     {
       "id": "1",
       "title": "HTML",
-      "imageUrl": "https://cdn-images-1.medium.com/max/1000/1*aVzJTznRRfP1lM7AXe9yLw.jpeg",
-      "text": "How to make your HTML responsive by adding a single line of CSS, In this article",
+      "imageUrl": "https://cdn-images-1.medium.com/max/1600/1*jCNANupl0ECRzF6cOLuWNw.gif",
+      "text": "<h4>In this article I’ll teach you how to use CSS Grid to create a super cool image grid which varies the amount of columns with the width of the screen.</h4><h4>And the most beautiful part: the responsiveness will be added with a single line of CSS.</h4><h4>This means we don’t have to clutter up the HTML with ugly class names (i.e. col-sm-4, col-md-8) or create media queries for every single screen size.</h4><h4>For this article, we’ll continue on with the grid we used in my first CSS Grid article. Then we’ll add the images at the end of the article. Here’s how our initial grid looks:</h4><h4>If this code confuses you, I’d recommend you to read my Learn CSS Grid in 5 minutes article, where I explain the basics of the layout module.</h4><h4>CSS Grid brings with it a whole new value called a fraction unit. The fraction unit is written like fr, and it allows you to split the container into as many fractions as you want.</h4>",
       "author": "Per Harald Borgen",
       "nameArticle": "How to make your HTML responsive by adding a single line of CSS",
       "imageProfile": "https://miro.medium.com/fit/c/240/240/0*EdUYcQhX6TPWdQ6p.jpg",

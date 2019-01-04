@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+h3{
+padding: 10px 0 10px;
+text-decoration: underline;
+}
 #message-form {
     width: 100%;
     margin: 0 20px;
@@ -21,7 +25,8 @@
         box-sizing: border-box;
     }
 
-    .contact-form-field {
+    .contact-form-field,
+    .form-group {
         padding: 20px 0;
         width: 100%;
 
@@ -60,8 +65,9 @@
     }
 
     #contact-form-submit,
-    #reset {
-        width: 50%;
+    #reset,
+    #btn-message {
+        width: 30%;
         background-color: $primary-color;
         color: $secundary-color;
         padding: 10px;

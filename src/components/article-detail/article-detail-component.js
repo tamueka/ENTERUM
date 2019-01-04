@@ -17,6 +17,7 @@ const setInitialValue = (likeButton, liked) =>{
 export const updateArticleDetail = ({
     title,
     imageUrl,
+    imageUrl1,
     text,
     author,
     nameArticle,
@@ -37,20 +38,22 @@ export const updateArticleDetail = ({
     const article = document.getElementById('article-detail');
     article.innerHTML = `
     <div>
-        <img src="${imageUrl}" class="iamgen" alt="imagen" title="imagen">
+        <div class="img">
+            <img src="${imageUrl}" class="imagen" alt="imagen" title="imagen">
+        </div>
         <p class="mb-1">${author}</p>
+        <img src="${imageProfile}" alt="Url image" class="d-block" style="height:80px; width=50px; border-radius:50%; padding-bottom: 10px;">
         <div>
-            <p class="link">${title}</p>
             <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">${nameArticle}</h1>
-            <img src="${imageProfile}" alt="Url image" class="d-block" style="height:80px; width=50px; border-radius:50%; padding-bottom: 10px;">
-            <p class="mb-1">${author}</p>
+            <div>
+                <button id="like-button" class="like-button" alt ="like">
+                    <i class = "far fa-heart"></i></button>
+            </div>
             <p class="mb-1">${text}</p>
         </div>
         <p class="article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link"></p>
         <a title="back" class=" back article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link" href="javascript:history.back()">
-        <div>
-            <button id="like-button" class="like-button" alt="like"><i class="far fa-heart"></i></button> 
-        </div>
+
         <div>
             <i class="fas fa-long-arrow-alt-left"></i>  BACK</a>
         </div>
