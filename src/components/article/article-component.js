@@ -3,6 +3,7 @@ export const createArticle = ({
             title,
             imageUrl,
             text,
+            short_text,
             author,
             nameArticle,
             imageProfile,
@@ -21,7 +22,6 @@ export const createArticle = ({
         <div class="px-2 py-2">
             <a class="article-title" href="/article/?id=${id}" class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">${title}</a>
             <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">${nameArticle}</h1>
-            <p class="mb-1">${text} &hellip;</p>
             <p class="mb-1">${author}</p>
             <div>
                 <img src="${imageProfile}" alt="Url image" class="d-block" style ="height:50px; width=50px; border-radius:50%; padding-bottom: 10px;">

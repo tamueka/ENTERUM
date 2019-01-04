@@ -139,6 +139,13 @@
       "name": "alva",
       "message": "i like this post 100%",
       "id": 28
+    },
+    {
+      "email": "lolo@gmail.com",
+      "id_article": "2",
+      "name": "lolo",
+      "message": "css grid y flexbox para maquetar",
+      "id": 29
     }
   ],
   "articles": [
@@ -146,6 +153,7 @@
       "id": "1",
       "title": "HTML",
       "imageUrl": "https://cdn-images-1.medium.com/max/1600/1*jCNANupl0ECRzF6cOLuWNw.gif",
+      "short_text": "In this article I’ll teach you how to use CSS Grid to create a super cool",
       "text": "<h4>In this article I’ll teach you how to use CSS Grid to create a super cool image grid which varies the amount of columns with the width of the screen.</h4><h4>And the most beautiful part: the responsiveness will be added with a single line of CSS.</h4><h4>This means we don’t have to clutter up the HTML with ugly class names (i.e. col-sm-4, col-md-8) or create media queries for every single screen size.</h4><h4>For this article, we’ll continue on with the grid we used in my first CSS Grid article. Then we’ll add the images at the end of the article. Here’s how our initial grid looks:</h4><h4>If this code confuses you, I’d recommend you to read my Learn CSS Grid in 5 minutes article, where I explain the basics of the layout module.</h4><h4>CSS Grid brings with it a whole new value called a fraction unit. The fraction unit is written like fr, and it allows you to split the container into as many fractions as you want.</h4>",
       "author": "Per Harald Borgen",
       "nameArticle": "How to make your HTML responsive by adding a single line of CSS",

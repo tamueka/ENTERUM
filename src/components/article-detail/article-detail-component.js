@@ -19,6 +19,7 @@ export const updateArticleDetail = ({
     imageUrl,
     imageUrl1,
     text,
+    short_text,
     author,
     nameArticle,
     imageProfile,
@@ -49,7 +50,7 @@ export const updateArticleDetail = ({
                 <button id="like-button" class="like-button" alt ="like">
                     <i class = "far fa-heart"></i></button>
             </div>
-            <p class="mb-1">${text}</p>
+            <p class="mb-1">${text} &hellip;</p>
         </div>
         <p class="article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link"></p>
         <a title="back" class=" back article-title text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link" href="javascript:history.back()">
